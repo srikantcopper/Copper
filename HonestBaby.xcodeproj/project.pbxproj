@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		84245B921AA64CB6004E37EB /* OverlappinpCircularLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84245B911AA64CB6004E37EB /* OverlappinpCircularLayout.swift */; };
+		8449ADCA1AA634F900976C25 /* ChildViewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8449ADC91AA634F900976C25 /* ChildViewCollectionViewCell.swift */; };
 		845249141AA1357300D000AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845249131AA1357300D000AE /* AppDelegate.swift */; };
 		845249171AA1357300D000AE /* HonestBaby.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 845249151AA1357300D000AE /* HonestBaby.xcdatamodeld */; };
 		845249191AA1357300D000AE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845249181AA1357300D000AE /* ViewController.swift */; };
@@ -14,6 +16,12 @@
 		8452491E1AA1357300D000AE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8452491D1AA1357300D000AE /* Images.xcassets */; };
 		845249211AA1357300D000AE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8452491F1AA1357300D000AE /* LaunchScreen.xib */; };
 		8452492D1AA1357300D000AE /* HonestBabyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8452492C1AA1357300D000AE /* HonestBabyTests.swift */; };
+		845249381AA13C6E00D000AE /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845249371AA13C6E00D000AE /* UIColorExtensions.swift */; };
+		8452493D1AA13E4E00D000AE /* AppearanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8452493C1AA13E4E00D000AE /* AppearanceManager.swift */; };
+		8477DCB81AA51149006B59EB /* TrackingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8477DCB71AA51149006B59EB /* TrackingTableViewController.swift */; };
+		8477DCBA1AA511A0006B59EB /* ChildViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8477DCB91AA511A0006B59EB /* ChildViewCell.swift */; };
+		8477DCBC1AA511CA006B59EB /* TrackingOverviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8477DCBB1AA511CA006B59EB /* TrackingOverviewCell.swift */; };
+		8477DCBE1AA511FB006B59EB /* TrackingOptionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8477DCBD1AA511FB006B59EB /* TrackingOptionsCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +35,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		84245B911AA64CB6004E37EB /* OverlappinpCircularLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OverlappinpCircularLayout.swift; path = "View Controllers/OverlappinpCircularLayout.swift"; sourceTree = "<group>"; };
+		8449ADC91AA634F900976C25 /* ChildViewCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChildViewCollectionViewCell.swift; path = "View Controllers/ChildViewCollectionViewCell.swift"; sourceTree = "<group>"; };
 		8452490E1AA1357300D000AE /* HonestBaby.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HonestBaby.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		845249121AA1357300D000AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		845249131AA1357300D000AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -38,6 +48,12 @@
 		845249261AA1357300D000AE /* HonestBabyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HonestBabyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8452492B1AA1357300D000AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8452492C1AA1357300D000AE /* HonestBabyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HonestBabyTests.swift; sourceTree = "<group>"; };
+		845249371AA13C6E00D000AE /* UIColorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIColorExtensions.swift; path = Extensions/UIColorExtensions.swift; sourceTree = "<group>"; };
+		8452493C1AA13E4E00D000AE /* AppearanceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppearanceManager.swift; path = Manager/AppearanceManager.swift; sourceTree = "<group>"; };
+		8477DCB71AA51149006B59EB /* TrackingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TrackingTableViewController.swift; path = "View Controllers/TrackingTableViewController.swift"; sourceTree = "<group>"; };
+		8477DCB91AA511A0006B59EB /* ChildViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChildViewCell.swift; path = "View Controllers/ChildViewCell.swift"; sourceTree = "<group>"; };
+		8477DCBB1AA511CA006B59EB /* TrackingOverviewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TrackingOverviewCell.swift; path = "View Controllers/TrackingOverviewCell.swift"; sourceTree = "<group>"; };
+		8477DCBD1AA511FB006B59EB /* TrackingOptionsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TrackingOptionsCell.swift; path = "View Controllers/TrackingOptionsCell.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +95,9 @@
 		845249101AA1357300D000AE /* HonestBaby */ = {
 			isa = PBXGroup;
 			children = (
+				8452493E1AA1426B00D000AE /* ViewControllers */,
+				845249391AA13E0C00D000AE /* Manager */,
+				845249361AA13B1100D000AE /* Extensions */,
 				845249131AA1357300D000AE /* AppDelegate.swift */,
 				845249181AA1357300D000AE /* ViewController.swift */,
 				8452491A1AA1357300D000AE /* Main.storyboard */,
@@ -113,6 +132,43 @@
 				8452492B1AA1357300D000AE /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		845249361AA13B1100D000AE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				845249371AA13C6E00D000AE /* UIColorExtensions.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		845249391AA13E0C00D000AE /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				8452493C1AA13E4E00D000AE /* AppearanceManager.swift */,
+			);
+			name = Manager;
+			sourceTree = "<group>";
+		};
+		8452493E1AA1426B00D000AE /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				8452493F1AA1427700D000AE /* Tracking */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		8452493F1AA1427700D000AE /* Tracking */ = {
+			isa = PBXGroup;
+			children = (
+				8477DCB71AA51149006B59EB /* TrackingTableViewController.swift */,
+				8477DCB91AA511A0006B59EB /* ChildViewCell.swift */,
+				8477DCBB1AA511CA006B59EB /* TrackingOverviewCell.swift */,
+				8477DCBD1AA511FB006B59EB /* TrackingOptionsCell.swift */,
+				8449ADC91AA634F900976C25 /* ChildViewCollectionViewCell.swift */,
+				84245B911AA64CB6004E37EB /* OverlappinpCircularLayout.swift */,
+			);
+			name = Tracking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,9 +271,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84245B921AA64CB6004E37EB /* OverlappinpCircularLayout.swift in Sources */,
+				8477DCB81AA51149006B59EB /* TrackingTableViewController.swift in Sources */,
 				845249191AA1357300D000AE /* ViewController.swift in Sources */,
 				845249171AA1357300D000AE /* HonestBaby.xcdatamodeld in Sources */,
 				845249141AA1357300D000AE /* AppDelegate.swift in Sources */,
+				845249381AA13C6E00D000AE /* UIColorExtensions.swift in Sources */,
+				8452493D1AA13E4E00D000AE /* AppearanceManager.swift in Sources */,
+				8449ADCA1AA634F900976C25 /* ChildViewCollectionViewCell.swift in Sources */,
+				8477DCBC1AA511CA006B59EB /* TrackingOverviewCell.swift in Sources */,
+				8477DCBE1AA511FB006B59EB /* TrackingOptionsCell.swift in Sources */,
+				8477DCBA1AA511A0006B59EB /* ChildViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,6 +407,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = HonestBaby/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -353,6 +418,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = HonestBaby/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -411,6 +477,7 @@
 				845249321AA1357300D000AE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		845249331AA1357300D000AE /* Build configuration list for PBXNativeTarget "HonestBabyTests" */ = {
 			isa = XCConfigurationList;
@@ -419,6 +486,7 @@
 				845249351AA1357300D000AE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
