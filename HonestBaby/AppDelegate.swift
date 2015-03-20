@@ -20,6 +20,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         AppearenceManager().setupTints()
         
+//        AlamoFireManager().login()
+        
+        
         
         return true
     }

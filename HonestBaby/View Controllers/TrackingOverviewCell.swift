@@ -10,6 +10,16 @@ import UIKit
 
 class TrackingOverviewCell: UITableViewCell {
 
+    @IBOutlet weak var numericLabel: UILabel!
+    @IBOutlet weak var overviewTitleLabel: UILabel!
+    @IBOutlet weak var lastActivtyTypeLabel: UILabel!
+    @IBOutlet weak var activityTypeLabel: UIImageView!
+    
+    
+    
+    @IBOutlet weak var timeLabel: UILabel!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

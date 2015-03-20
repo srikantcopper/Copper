@@ -14,7 +14,7 @@ enum TableViewCellType{
         
         switch indexPath.row {
         case 0:
-            return  .ChildView
+            return .ChildView
         case 1:
             return .TrackingOptions
         case 2,3,4:
@@ -62,7 +62,7 @@ enum TrackingOptions {
     }
 }
 
-class TrackingTableViewController: UITableViewController {
+class TrackingTableViewController: UITableViewController, TrackingOptionsCellDelegate {
     var currentTrackingOption = TrackingOptions.Activity {
         didSet{
             
@@ -76,6 +76,25 @@ class TrackingTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    }
+    
+    override func viewWillAppear(animated: Bool ){
+        
+        super.viewWillAppear(animated)
+        
+        if let navController = self.navigationController {
+            navController.navigationBar.backgroundColor = UIColor.clearColor()
+            navController.navigationBar.translucent  = true
+            navController.navigationBarHidden = true
+
+        }
+
+
+        
+
+        
+
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -116,6 +135,8 @@ class TrackingTableViewController: UITableViewController {
 
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+
 
         
         
@@ -142,26 +163,54 @@ class TrackingTableViewController: UITableViewController {
 //
 //            
 //        }
-        var cell = UITableViewCell()
+
         
         if type == .ChildView{
-            cell = tableView.dequeueReusableCellWithIdentifier("ChildViewCell", forIndexPath: indexPath) as! ChildViewCell
+            let cell = tableView.dequeueReusableCellWithIdentifier("ChildViewCell", forIndexPath: indexPath) as! ChildViewCell
+            return cell
+
 
             
         } else if type == .TrackingOptions {
             
-            cell = tableView.dequeueReusableCellWithIdentifier("TrackingOptionsCell", forIndexPath: indexPath) as! TrackingOptionsCell
+            let cell = tableView.dequeueReusableCellWithIdentifier("TrackingOptionsCell", forIndexPath: indexPath) as! TrackingOptionsCell
+            cell.delegate = self
+            return cell
+
 
         } else if type == .TrackingOverview {
             
-            cell = tableView.dequeueReusableCellWithIdentifier("TrackingOverviewCell", forIndexPath: indexPath) as! TrackingOverviewCell
+            let cell = tableView.dequeueReusableCellWithIdentifier("TrackingOverviewCell", forIndexPath: indexPath) as! TrackingOverviewCell
+            switch indexPath.row {
+            case 2:
+                cell.numericLabel.text = "8"
+                cell.overviewTitleLabel.text = "Feedings"
+                cell.lastActivtyTypeLabel.text = "Breast Fed"
+            case 3:
+                cell.numericLabel.text = "10"
+                cell.overviewTitleLabel.text = "Sleep Hours"
+                cell.lastActivtyTypeLabel.text = "Woke Up"
+            case 4:
+                cell.numericLabel.text = "9"
+                cell.overviewTitleLabel.text = "Diaper Changes"
+                cell.lastActivtyTypeLabel.text = "Wet and Poopy"
+            default:
+                break
+                
+            }
+            return cell
+
 
             
         } else if type == .Unknown {
-            cell = UITableViewCell()
+            let cell = UITableViewCell()
+            return cell
+
 
         } else {
-            cell = UITableViewCell()
+            let cell = UITableViewCell()
+            return cell
+
 
             
         }
@@ -170,7 +219,6 @@ class TrackingTableViewController: UITableViewController {
         
         // Configure the cell...
 
-        return cell
     }
     
     override func tableView(tableView: UITableView, shouldHighlightRowAtIndexPath indexPath: NSIndexPath) -> Bool {
@@ -201,6 +249,9 @@ class TrackingTableViewController: UITableViewController {
         case (.TrackingOverview, _):
             if let segue = TrackingOptions.segueForTrackingOption(self.currentTrackingOption, indexPath: indexPath){
             println("\(segue)")
+                if segue == "SleepingOverviewSegue" {
+                self.performSegueWithIdentifier(segue, sender: self)
+                }
             }
         default:
             break
@@ -252,18 +303,51 @@ class TrackingTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
+        if let navigationController = self.navigationController as UINavigationController!{
+            navigationController.navigationBarHidden = false
+        }
+        
+        if let storyboardSegueIdentofier = segue.identifier {
+            println("destinationViewControlelr \(segue.destinationViewController)")
+
+            
+            switch storyboardSegueIdentofier {
+                
+                
+                case "SleepingOverviewSegue":
+                    if let destinationNavigationViewController = segue.destinationViewController as? UINavigationController {
+                        
+                        destinationNavigationViewController.navigationBarHidden = false
+                        
+
+                }
+                
+            default:
+                break
+                
+                
+            }
+            
+        }
+        
+        
+
     }
-    */
+    
     
     func showAlertViewForTrackingOption(trackingOption: TrackingOptions){
         
+    }
+    
+    func switchToViewForTrackingOption(trackingOption: TrackingOptions){
+        println("Swicth to view \(trackingOption)")
     }
 
 }
