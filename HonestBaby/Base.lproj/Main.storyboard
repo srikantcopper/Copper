@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7519.1" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="mwL-hp-C1q">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7525" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="mwL-hp-C1q">
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7513.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7516"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -298,6 +297,12 @@ Changes</string>
                                                 <constraint firstAttribute="centerX" secondItem="0M0-oU-2fc" secondAttribute="centerX" constant="5" id="wSe-vV-WjO"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="durationLabel" destination="Z3V-wy-GcU" id="4Fh-Hv-Oeo"/>
+                                            <outlet property="sleepTypeImage" destination="51n-tP-ppz" id="rhL-7P-l1A"/>
+                                            <outlet property="sleepTypeLabel" destination="0M0-oU-2fc" id="033-Eh-4mw"/>
+                                            <outlet property="timeLabel" destination="Uem-CD-4oR" id="GoN-Ph-ibo"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -311,6 +316,9 @@ Changes</string>
                                 <state key="normal" title="Start Sleep Timer">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="toggleSleepTimer:" destination="RsO-ee-KdT" eventType="touchUpInside" id="VZV-vK-cIg"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.70980392160000005" blue="0.79607843140000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -343,6 +351,32 @@ Changes</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z7g-Ne-CeM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2978" y="1046"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="hwp-AD-i0l">
+            <objects>
+                <tableViewController id="1eb-Qh-7Mf" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="9hA-se-klc">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="zzW-ME-qb0">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zzW-ME-qb0" id="xkD-YC-2uu">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="1eb-Qh-7Mf" id="LaM-Uq-fZj"/>
+                            <outlet property="delegate" destination="1eb-Qh-7Mf" id="Nwh-Ts-ExE"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NOT-OV-g7l" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3772" y="1046"/>
         </scene>
         <!--Discover-->
         <scene sceneID="5Q1-Zs-QX7">

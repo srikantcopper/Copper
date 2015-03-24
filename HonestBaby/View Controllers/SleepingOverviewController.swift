@@ -9,6 +9,14 @@
 import UIKit
 import QuartzCore
 
+enum SleepTimerState {
+    case Stopped
+    case Running
+    
+}
+
+typealias sleepDataType = (startTime: NSDate, duration: NSTimeInterval)
+
 class SleepingOverviewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var timerLabel: UILabel!
@@ -16,6 +24,19 @@ class SleepingOverviewController: UIViewController, UITableViewDataSource, UITab
     @IBOutlet weak var toggleTimer: UIButton!
     
     @IBOutlet weak var tableView: UITableView!
+    
+    var sleepTimerState: SleepTimerState = .Stopped
+    
+    var sleepTimer: NSTimer? = NSTimer()
+    
+    var startTime: NSDate?
+    
+    var sleepDuration: NSTimeInterval?
+    
+    let dateFormatter: NSDateFormatter = NSDateFormatter()
+    
+    var data: [sleepDataType] = []
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +53,12 @@ class SleepingOverviewController: UIViewController, UITableViewDataSource, UITab
 
 
         // Do any additional setup after loading the view.
+        
+        self.setupDateFormatter()
+        self.setupDataSource()
     }
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -75,13 +101,19 @@ class SleepingOverviewController: UIViewController, UITableViewDataSource, UITab
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 3
+        return data.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         
         let cell = tableView.dequeueReusableCellWithIdentifier("SleepOverviewCell", forIndexPath: indexPath) as! SleepOverviewCell
+        
+        if  !data.isEmpty {
+
+            cell.setupWithData(data[indexPath.row])
+            
+        }
         
         return cell
         
@@ -98,9 +130,127 @@ class SleepingOverviewController: UIViewController, UITableViewDataSource, UITab
         return 88
     }
     
+//IBActions 
+    
+    @IBAction func toggleSleepTimer(sender: AnyObject) {
+        
+        switch sleepTimerState {
+        case .Running:
+            self.stoptimer()
+        case .Stopped:
+            self.startTimer()
+            
+            
+        }
+    }
     
     
+    func stoptimer(){
+        
+        if let iuSleepTimer = sleepTimer {
+            
+            iuSleepTimer.invalidate()
+            
+            sleepTimer = nil
+        }
+        
+        sleepTimerState = .Stopped
+        
+        toggleTimer.setTitle("Start Sleep Timer", forState: .Normal)
+        
+        
+        
+        
+    }
     
+    
+    func startTimer(){
+        
+        startTime = NSDate()
+
+
+        sleepTimer = NSTimer.scheduledTimerWithTimeInterval(Double(1/10), target: self, selector: "updatetimer", userInfo: nil, repeats: true)
+        
+        sleepTimerState = .Running
+        
+        toggleTimer.setTitle("Stop Sleep Timer", forState: .Normal)
+
+
+        
+        
+
+        
+        
+        
+    }
+    
+    func updatetimer() {
+        
+        let currentTime = NSDate()
+        
+        if let timerStartTime = startTime {
+            
+            var timeInterval = currentTime.timeIntervalSinceDate(timerStartTime)
+            
+            //calculate the hours, minutes and seconds in elapsed time.
+            
+            let hours = UInt8(timeInterval/3600)
+            timeInterval -= (NSTimeInterval(hours) * 3600)
+            
+            let minutes = UInt8(timeInterval / 60.0)
+            timeInterval -= (NSTimeInterval(minutes) * 60)
+            
+            let seconds = UInt8(timeInterval)
+            timeInterval -= NSTimeInterval(seconds)
+            
+
+            
+            //add the leading zero for minutes, seconds and millseconds and store them as string constants
+            
+            let strHours = hours > 9 ? String(hours) : "0" + String(hours)
+            let strMinutes = minutes > 9 ? String(minutes) : "0" + String(minutes)
+            let strSeconds = seconds > 9 ? String(seconds) : "0" + String(seconds)
+
+            timerLabel.text = "\(strHours):\(strMinutes):\(strSeconds)"
+            
+            sleepDuration = timeInterval
+
+            
+        } else {
+            println("No start Time")
+        }
+        
+        
+        
+        }
+    
+    //initial data setup
+    
+    func setupDateFormatter() {
+        
+        dateFormatter.dateFormat = "HH:mm:ss"
+        dateFormatter.timeZone = NSTimeZone.localTimeZone()
+        
+        
+    }
+    
+    func setupDataSource() {
+        
+        let sleepData1: sleepDataType = (NSDate(), NSTimeInterval.abs(60*60))
+        let sleepData2: sleepDataType = (NSDate(), NSTimeInterval.abs(10*60))
+        let sleepData3: sleepDataType = (NSDate(), NSTimeInterval.abs(200*60))
+        
+        
+        let initialArray = [sleepData1, sleepData2, sleepData3]
+        
+        data = initialArray
+        
+//        data.sort({ $0.startDate.compare($1.startDate) == NSComparisonResult.OrderedAscending })
+
+        
+    }
+    
+
     
 
 }
