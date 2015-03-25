@@ -17,7 +17,7 @@ enum SleepTimerState {
 
 typealias sleepDataType = (startTime: NSDate, duration: NSTimeInterval)
 
-class SleepingOverviewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class SleepingOverviewController: UIViewController, UITableViewDataSource, UITableViewDelegate, ActivityDetailOverviewHeaderCellDelegate {
     
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var lastActivityLabel: UILabel!
@@ -122,7 +122,8 @@ class SleepingOverviewController: UIViewController, UITableViewDataSource, UITab
     
     func tableView(tableView: UITableView,
     viewForHeaderInSection section: Int) -> UIView?{
-        let headerView = ActivityDetailOverviewHeaderCell.loadFromNibNamed("ActivityDetailOverviewHeaderCell")
+        let headerView = ActivityDetailOverviewHeaderCell.loadFromNibNamed("ActivityDetailOverviewHeaderCell") as! ActivityDetailOverviewHeaderCell
+        headerView.delegate = self
         return headerView
     }
     
@@ -248,6 +249,30 @@ class SleepingOverviewController: UIViewController, UITableViewDataSource, UITab
 //        data.sort({ $0.startDate.compare($1.startDate) == NSComparisonResult.OrderedAscending })
 
         
+    }
+    
+    //ActivityDetailOverviewHeaderCellDelegate methods
+    
+    func userPressedAdd(){
+        
+        self.performSegueWithIdentifier("ShowManualSleepEntryViewController", sender: self)
+        
+    }
+    func userPressedmoreInfo(){
+        
+    }
+    func userPressedNextDay(){
+        
+    }
+    func userPressedPreviousDay(){
+        
+    }
+    
+    
+    // Unwind segue 
+    
+    @IBAction func unwindToSleepingOverviewController(segue: UIStoryboardSegue) {
+        //nothing goes here
     }
     
 

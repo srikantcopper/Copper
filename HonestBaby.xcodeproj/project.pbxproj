@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		79CA848C3A8F08BA7893DBF0 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DB6865ED78B107467111D07 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		842091C31AC1CBD3002B0CEA /* ManualSleepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842091C21AC1CBD3002B0CEA /* ManualSleepViewController.swift */; };
+		842091C51AC1D89A002B0CEA /* DatePickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842091C41AC1D89A002B0CEA /* DatePickerCell.swift */; };
+		842091C71AC1D8BD002B0CEA /* DurationPickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842091C61AC1D8BD002B0CEA /* DurationPickerCell.swift */; };
+		842091C91AC1D8D7002B0CEA /* ManualSleepCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842091C81AC1D8D7002B0CEA /* ManualSleepCell.swift */; };
 		84245B921AA64CB6004E37EB /* OverlappinpCircularLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84245B911AA64CB6004E37EB /* OverlappinpCircularLayout.swift */; };
 		84245B951AAA26C9004E37EB /* AlamoFireManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84245B941AAA26C9004E37EB /* AlamoFireManager.swift */; };
 		84245BB81AAE236A004E37EB /* SleepingOverviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84245BB71AAE236A004E37EB /* SleepingOverviewController.swift */; };
@@ -58,6 +62,10 @@
 		4DB6865ED78B107467111D07 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		59EC6C9ED08E7D4CD6662405 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		5A35FA5179F8DADE712BAB5E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		842091C21AC1CBD3002B0CEA /* ManualSleepViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ManualSleepViewController.swift; path = "View Controllers/Sleep/ManualSleepViewController.swift"; sourceTree = "<group>"; };
+		842091C41AC1D89A002B0CEA /* DatePickerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DatePickerCell.swift; path = "Custom VIews/DatePickerCell.swift"; sourceTree = "<group>"; };
+		842091C61AC1D8BD002B0CEA /* DurationPickerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DurationPickerCell.swift; path = "Custom VIews/DurationPickerCell.swift"; sourceTree = "<group>"; };
+		842091C81AC1D8D7002B0CEA /* ManualSleepCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ManualSleepCell.swift; path = "View Controllers/Sleep/ManualSleepCell.swift"; sourceTree = "<group>"; };
 		84245B911AA64CB6004E37EB /* OverlappinpCircularLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OverlappinpCircularLayout.swift; path = "View Controllers/OverlappinpCircularLayout.swift"; sourceTree = "<group>"; };
 		84245B941AAA26C9004E37EB /* AlamoFireManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlamoFireManager.swift; path = Networking/AlamoFireManager.swift; sourceTree = "<group>"; };
 		84245BB71AAE236A004E37EB /* SleepingOverviewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SleepingOverviewController.swift; path = "View Controllers/SleepingOverviewController.swift"; sourceTree = "<group>"; };
@@ -121,6 +129,28 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		842091C11AC1CB7C002B0CEA /* Sleep */ = {
+			isa = PBXGroup;
+			children = (
+				84245BB71AAE236A004E37EB /* SleepingOverviewController.swift */,
+				84245BB91AAE4743004E37EB /* SleepOverviewCell.swift */,
+				842091C21AC1CBD3002B0CEA /* ManualSleepViewController.swift */,
+				842091C41AC1D89A002B0CEA /* DatePickerCell.swift */,
+				842091C61AC1D8BD002B0CEA /* DurationPickerCell.swift */,
+				842091C81AC1D8D7002B0CEA /* ManualSleepCell.swift */,
+			);
+			name = Sleep;
+			sourceTree = "<group>";
+		};
+		842091CA1AC1D8ED002B0CEA /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				84DCDA561AAE4D8900326F4A /* ActivityDetailOverviewHeaderCell.swift */,
+				84DCDA581AAE525900326F4A /* ActivityDetailOverviewHeaderCell.xib */,
+			);
+			name = CustomViews;
+			sourceTree = "<group>";
+		};
 		84245B931AAA1BE4004E37EB /* Networking */ = {
 			isa = PBXGroup;
 			children = (
@@ -152,6 +182,7 @@
 		845249101AA1357300D000AE /* HonestBaby */ = {
 			isa = PBXGroup;
 			children = (
+				842091CA1AC1D8ED002B0CEA /* CustomViews */,
 				8452493E1AA1426B00D000AE /* ViewControllers */,
 				845249391AA13E0C00D000AE /* Manager */,
 				845249361AA13B1100D000AE /* Extensions */,
@@ -226,10 +257,7 @@
 				8477DCBD1AA511FB006B59EB /* TrackingOptionsCell.swift */,
 				8449ADC91AA634F900976C25 /* ChildViewCollectionViewCell.swift */,
 				84245B911AA64CB6004E37EB /* OverlappinpCircularLayout.swift */,
-				84245BB71AAE236A004E37EB /* SleepingOverviewController.swift */,
-				84245BB91AAE4743004E37EB /* SleepOverviewCell.swift */,
-				84DCDA561AAE4D8900326F4A /* ActivityDetailOverviewHeaderCell.swift */,
-				84DCDA581AAE525900326F4A /* ActivityDetailOverviewHeaderCell.xib */,
+				842091C11AC1CB7C002B0CEA /* Sleep */,
 			);
 			name = Tracking;
 			sourceTree = "<group>";
@@ -391,7 +419,10 @@
 				84245BB81AAE236A004E37EB /* SleepingOverviewController.swift in Sources */,
 				8477DCB81AA51149006B59EB /* TrackingTableViewController.swift in Sources */,
 				845249191AA1357300D000AE /* ViewController.swift in Sources */,
+				842091C31AC1CBD3002B0CEA /* ManualSleepViewController.swift in Sources */,
+				842091C51AC1D89A002B0CEA /* DatePickerCell.swift in Sources */,
 				84DCDA571AAE4D8900326F4A /* ActivityDetailOverviewHeaderCell.swift in Sources */,
+				842091C71AC1D8BD002B0CEA /* DurationPickerCell.swift in Sources */,
 				845249171AA1357300D000AE /* HonestBaby.xcdatamodeld in Sources */,
 				84245B951AAA26C9004E37EB /* AlamoFireManager.swift in Sources */,
 				84245BBA1AAE4743004E37EB /* SleepOverviewCell.swift in Sources */,
@@ -399,6 +430,7 @@
 				845249381AA13C6E00D000AE /* UIColorExtensions.swift in Sources */,
 				84DCDA5C1AAE63D600326F4A /* UIViewExtensions.swift in Sources */,
 				8452493D1AA13E4E00D000AE /* AppearanceManager.swift in Sources */,
+				842091C91AC1D8D7002B0CEA /* ManualSleepCell.swift in Sources */,
 				8449ADCA1AA634F900976C25 /* ChildViewCollectionViewCell.swift in Sources */,
 				8477DCBC1AA511CA006B59EB /* TrackingOverviewCell.swift in Sources */,
 				8477DCBE1AA511FB006B59EB /* TrackingOptionsCell.swift in Sources */,

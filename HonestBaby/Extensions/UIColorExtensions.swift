@@ -67,7 +67,7 @@ extension UIColor {
         }
     }
     
-    var green: UIColor {
+    var honestGreen: UIColor {
         
         get {
             

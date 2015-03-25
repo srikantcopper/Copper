@@ -33,6 +33,9 @@
                                 <color key="titleColor" red="0.0" green="0.70980392160000005" blue="0.79607843140000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <connections>
+                                <action selector="addbuttonPressed:" destination="iUr-d6-1Qm" eventType="touchUpInside" id="W3y-UK-lHB"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" red="0.67843137249999996" green="0.68627450980000004" blue="0.69803921570000005" alpha="0.57000000000000006" colorSpace="custom" customColorSpace="sRGB"/>

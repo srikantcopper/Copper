@@ -8,6 +8,14 @@
 
 import UIKit
 
+protocol ActivityDetailOverviewHeaderCellDelegate: class {
+    func userPressedAdd()
+    func userPressedmoreInfo()
+    func userPressedNextDay()
+    func userPressedPreviousDay()
+    
+}
+
 class ActivityDetailOverviewHeaderCell: UIView {
     
     @IBOutlet weak var topView: UIView!
@@ -18,6 +26,17 @@ class ActivityDetailOverviewHeaderCell: UIView {
     @IBOutlet weak var dayLabel: UILabel!
     @IBOutlet weak var nextDayButton: UIButton!
     @IBOutlet weak var previousDayButton: UIButton!
+    
+    weak var delegate: ActivityDetailOverviewHeaderCellDelegate?
+    
+    @IBAction func addbuttonPressed(sender: UIButton) {
+        
+        if let iuDelegate = self.delegate {
+            iuDelegate.userPressedAdd()
+        }
+    }
+    
+    
 
 
     

@@ -51,17 +51,6 @@ class SleepOverviewCell: UITableViewCell {
         
         println("startComponents \(strtComponents))-\(endComponents))")
 
-        
-        
-
-
-        
-        
-
-        
-        
-        
-        
         timeLabel.text = "\(timeFormatter.stringFromDate(sleepData.startTime))-\(timeFormatter.stringFromDate(endSleepDate))"
         
         var timeInterval = sleepData.duration
